@@ -22,6 +22,8 @@ GameObject:
   - component: {fileID: 212156097342233190}
   - component: {fileID: 114885836959309764}
   - component: {fileID: 58769522397382164}
+  - component: {fileID: 114465880222163476}
+  - component: {fileID: 114768854155489654}
   m_Layer: 0
   m_Name: asteroid
   m_TagString: Hazard
@@ -57,6 +59,30 @@ CircleCollider2D:
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
   m_Radius: 0.6
+--- !u!114 &114465880222163476
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1177604899952978}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 19e6ab0a1166d2644abb2f7d9ba24748, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  rotationSpeed: 0
+--- !u!114 &114768854155489654
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1177604899952978}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 19e6ab0a1166d2644abb2f7d9ba24748, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  rotationSpeed: 100
 --- !u!114 &114885836959309764
 MonoBehaviour:
   m_ObjectHideFlags: 1
