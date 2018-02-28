@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class PlayerController : MonoBehaviour
 {
@@ -8,16 +9,22 @@ public class PlayerController : MonoBehaviour
     public GameObject camera;
     public int maxX;
     public int maxY;
+    public GameObject scoreTextGO;
 
     //Current score
     private int score;
     private Rigidbody2D rb;
+    private Text scoreText;
+    private int nextScoreUpdate;
 
     // Use this for initialization
     void Start()
     {
         this.score = 0;
+        this.nextScoreUpdate = 1;
         this.rb = gameObject.GetComponent<Rigidbody2D>();
+        this.scoreText = scoreTextGO.GetComponent<Text>();
+        SetScoreText();
     }
 
     // Update is called once per frame
@@ -32,6 +39,12 @@ public class PlayerController : MonoBehaviour
             transform.position = new Vector2(this.transform.position.x - movementStrength / 100, this.transform.position.y);
         else if (Input.GetKey("right") && rb.transform.position.x < camera.transform.position.x + maxX)
             transform.position = new Vector2(this.transform.position.x + movementStrength / 100, this.transform.position.y);
+
+        if (Time.time >= nextScoreUpdate)
+        {
+            nextScoreUpdate = Mathf.FloorToInt(Time.time) + 1;
+            handleScore();
+        }
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
@@ -41,5 +54,16 @@ public class PlayerController : MonoBehaviour
             this.score++;
             collision.gameObject.SetActive(false);
         }
+    }
+    
+    private void SetScoreText()
+    {
+        scoreText.text = "Score: " + this.score.ToString();
+    }
+
+    private void handleScore()
+    {
+        this.score++;
+        SetScoreText();
     }
 }
