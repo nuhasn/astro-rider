@@ -10,7 +10,7 @@ public class ItemGenerator : MonoBehaviour {
     public int maxY;
 
     // Monitor next point that the item needs to generated at.
-    private int nextGenerationPoint;
+    private float nextGenerationPoint;
 
 	// Use this for initialization
 	void Start () {
@@ -21,11 +21,11 @@ public class ItemGenerator : MonoBehaviour {
 	void Update () {
         if (Time.time >= nextGenerationPoint)
         {
-            nextGenerationPoint = Mathf.FloorToInt(Time.time) + 1;
+            nextGenerationPoint = (Time.time) + Random.Range(0.5f, 1);
             GameObject ob = (GameObject) Instantiate (item);
             ob.SetActive(true);
             Vector2 position = this.transform.position;
-            ob.transform.position = new Vector2(position.x, Random.Range(position.y - maxY, position.y + maxY));
+            ob.transform.position = new Vector2(position.x, GameObject.FindWithTag("Player").transform.position.y);
         }
     }
 }
