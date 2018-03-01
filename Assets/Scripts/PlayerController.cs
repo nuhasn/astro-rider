@@ -16,6 +16,7 @@ public class PlayerController : MonoBehaviour
     public GameObject scoreTextGO;
     public GameObject gameOverTextGO;
     public GameObject factTextGO;
+    public GameObject scrapTextGO;
     public int health;
     public int asteroidHealthDeduction;
     public int batteryHealth;
@@ -25,6 +26,10 @@ public class PlayerController : MonoBehaviour
     private Rigidbody2D rb;
     private Text scoreText;
     private int nextScoreUpdate;
+
+    //Current scrap
+    public int scrap;
+    private Text scrapText;
 
     private bool upPressed;
     private float upPressStartTime;
@@ -43,11 +48,14 @@ public class PlayerController : MonoBehaviour
         fxSound = GetComponent<AudioSource>();
 
         this.score = 0;
+        this.scrap = 0;
         this.nextScoreUpdate = 1;
         this.rb = gameObject.GetComponent<Rigidbody2D>();
         this.scoreText = scoreTextGO.GetComponent<Text>();
+        this.scrapText = scrapTextGO.GetComponent<Text>();
 
         SetScoreText();
+        SetScrapText();
 
         this.upPressed = false;
         this.upPressStartTime = 0;
@@ -127,9 +135,15 @@ public class PlayerController : MonoBehaviour
         }
 
         if (this.lastPressed == "right" && rb.transform.position.x < camera.transform.position.x + maxX)
+        {
             transform.position = new Vector2(this.transform.position.x + (movementStrength / 60) * 1 / (Time.time), this.transform.position.y);
+            transform.Rotate(new Vector3(0, 0, -1), 1 / (Time.time * 2.3f));
+        }
         if (this.lastPressed == "left" && rb.transform.position.x > camera.transform.position.x - maxX)
+        {
             transform.position = new Vector2(this.transform.position.x - (movementStrength / 60) * 1 / (Time.time), this.transform.position.y);
+            transform.Rotate(new Vector3(0, 0, 1), 1 / (Time.time * 1.6f));
+        }
 
         if (this.health <= 0)
             gameOver();
@@ -147,10 +161,21 @@ public class PlayerController : MonoBehaviour
         scoreText.text = "Score: " + this.score.ToString();
     }
 
+    private void SetScrapText()
+    {
+        scrapText.text = "Scrap: " + this.scrap.ToString();
+    }
+
     private void handleScore()
     {
         this.score++;
         SetScoreText();
+    }
+
+    private void handleScrap()
+    {
+        this.scrap++;
+        SetScrapText();
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
@@ -170,6 +195,11 @@ public class PlayerController : MonoBehaviour
 
             fxSound.clip = powerUp;
             play = true;
+        }
+        if (collision.tag == "Scrap")
+        {
+            handleScrap();
+            Destroy(collision.GetComponent<GameObject>());
         }
         if (play)
             fxSound.Play();
@@ -195,10 +225,10 @@ public class PlayerController : MonoBehaviour
             "Neptune: Distance from Sun: 4.498 billion km, Mass: 1.024 × 10^26 kg, Length of day: 0d 16h 6m\n"
         };
 
-        string facts = "FUN FACTS:\n";
+        string facts = "GATHERED INTEL:\n";
         for (int i = 0; i < 6; i++)
         {
-            if (score >= 10 * i)
+            if (scrap >= 5 * i)
             {
                 Debug.Log(i);
                 facts += (vehicleFacts[i]);

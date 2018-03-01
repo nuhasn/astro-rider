@@ -6,6 +6,7 @@ public class ItemGenerator : MonoBehaviour {
     // Item game object to generate.
     public GameObject[] asteroids;
     public GameObject battery;
+    public GameObject scrapMetal;
 
     public GameObject levelController;
 
@@ -17,12 +18,14 @@ public class ItemGenerator : MonoBehaviour {
     // Monitor next point that the item needs to generated at.
     private float nextAsteroidGenerationPoint;
     private float nextBatteryGenerationPoint;
+    private float nextscrapMetalGenerationPoint;
 
     // Use this for initialization
     void Start () {
         lc = levelController.GetComponent<LevelController>();
         this.nextAsteroidGenerationPoint = 1;
         this.nextBatteryGenerationPoint = 10;
+        this.nextscrapMetalGenerationPoint = 5;
     }
 	
 	// Update is called once per frame
@@ -56,6 +59,14 @@ public class ItemGenerator : MonoBehaviour {
             ob.SetActive(true);
             Vector2 position = this.transform.position;
             ob.transform.position = new Vector2(position.x, position.y + Random.Range(-maxY,maxY));
+        }
+        if (Time.time >= nextscrapMetalGenerationPoint)
+        {
+            nextscrapMetalGenerationPoint = (Time.time) + Random.Range(2, 6);
+            GameObject ob = (GameObject)Instantiate(scrapMetal);
+            ob.SetActive(true);
+            Vector2 position = this.transform.position;
+            ob.transform.position = new Vector2(position.x, position.y + Random.Range(-maxY, maxY));
         }
     }
 }

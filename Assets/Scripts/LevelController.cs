@@ -30,7 +30,7 @@ public class LevelController : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-		if (this.currentLevel < levelScoreThresholds.Length && player.score >= levelScoreThresholds[currentLevel])
+		if (this.currentLevel < levelScoreThresholds.Length && player.scrap >= levelScoreThresholds[currentLevel])
         {
             planet_sr.sprite = planets[currentLevel + 1];
             player_sr.sprite = players[currentLevel + 1];
