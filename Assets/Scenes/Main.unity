@@ -646,6 +646,17 @@ RectTransform:
   m_PrefabParentObject: {fileID: 224741303332937632, guid: 30460893ee4b330408738fa04ce3632b,
     type: 2}
   m_PrefabInternal: {fileID: 380115694}
+--- !u!1 &1514775141 stripped
+GameObject:
+  m_PrefabParentObject: {fileID: 1561086134649424, guid: 94396a7fe108794449f0e97fada2e741,
+    type: 2}
+  m_PrefabInternal: {fileID: 2064852618}
+--- !u!114 &1514775143 stripped
+MonoBehaviour:
+  m_PrefabParentObject: {fileID: 114667727695249330, guid: 94396a7fe108794449f0e97fada2e741,
+    type: 2}
+  m_PrefabInternal: {fileID: 2064852618}
+  m_Script: {fileID: 11500000, guid: 919ffc5e70360bb4cb93072d717c3a76, type: 3}
 --- !u!1001 &2064852618
 Prefab:
   m_ObjectHideFlags: 0
@@ -732,6 +743,16 @@ Prefab:
       value: 
       objectReference: {fileID: 21300000, guid: ee9bea2d4abaa634eb64ca90bdcad027,
         type: 3}
+    - target: {fileID: 114977848874106196, guid: 94396a7fe108794449f0e97fada2e741,
+        type: 2}
+      propertyPath: lc
+      value: 
+      objectReference: {fileID: 1514775143}
+    - target: {fileID: 114977848874106196, guid: 94396a7fe108794449f0e97fada2e741,
+        type: 2}
+      propertyPath: levelController
+      value: 
+      objectReference: {fileID: 1514775141}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 94396a7fe108794449f0e97fada2e741, type: 2}
   m_IsPrefabParent: 0

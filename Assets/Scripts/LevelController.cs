@@ -8,7 +8,7 @@ public class LevelController : MonoBehaviour {
     public GameObject currentPlayer;
     public int[] levelScoreThresholds;
 
-    private int currentLevel;
+    public int currentLevel;
     private PlayerController player;
 
     private SpriteRenderer planet_sr;
