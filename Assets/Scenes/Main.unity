@@ -441,6 +441,36 @@ Prefab:
       propertyPath: gameOverTextGO
       value: 
       objectReference: {fileID: 191025685}
+    - target: {fileID: 212114449399560966, guid: 38237c20796cf6c4ea852b7c0e11422b,
+        type: 2}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: cbc0b5f5d688bd445860a18477be5c83,
+        type: 3}
+    - target: {fileID: 4016394244590912, guid: 38237c20796cf6c4ea852b7c0e11422b, type: 2}
+      propertyPath: m_LocalScale.y
+      value: 1.55
+      objectReference: {fileID: 0}
+    - target: {fileID: 212114449399560966, guid: 38237c20796cf6c4ea852b7c0e11422b,
+        type: 2}
+      propertyPath: m_SortingLayerID
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 212114449399560966, guid: 38237c20796cf6c4ea852b7c0e11422b,
+        type: 2}
+      propertyPath: m_WasSpriteAssigned
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 212114449399560966, guid: 38237c20796cf6c4ea852b7c0e11422b,
+        type: 2}
+      propertyPath: m_Size.x
+      value: 0.92
+      objectReference: {fileID: 0}
+    - target: {fileID: 212114449399560966, guid: 38237c20796cf6c4ea852b7c0e11422b,
+        type: 2}
+      propertyPath: m_Size.y
+      value: 0.52
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 38237c20796cf6c4ea852b7c0e11422b, type: 2}
   m_IsPrefabParent: 0
@@ -660,6 +690,48 @@ Prefab:
       propertyPath: objectToFollow
       value: 
       objectReference: {fileID: 113017261}
+    - target: {fileID: 114667727695249330, guid: 94396a7fe108794449f0e97fada2e741,
+        type: 2}
+      propertyPath: players.Array.data[0]
+      value: 
+      objectReference: {fileID: 21300000, guid: 1d35950ffa351fd40a29757a3e6f8756,
+        type: 3}
+    - target: {fileID: 114667727695249330, guid: 94396a7fe108794449f0e97fada2e741,
+        type: 2}
+      propertyPath: players.Array.data[1]
+      value: 
+      objectReference: {fileID: 21300000, guid: 056370d3e8cc2d1468bfeb42794eac8a,
+        type: 3}
+    - target: {fileID: 114667727695249330, guid: 94396a7fe108794449f0e97fada2e741,
+        type: 2}
+      propertyPath: players.Array.data[2]
+      value: 
+      objectReference: {fileID: 21300000, guid: 8bcf15a23be9f1e4d96b2d04945aad89,
+        type: 3}
+    - target: {fileID: 114667727695249330, guid: 94396a7fe108794449f0e97fada2e741,
+        type: 2}
+      propertyPath: players.Array.data[3]
+      value: 
+      objectReference: {fileID: 21300000, guid: 1ef88632ca964c4479c635e171b2f3b7,
+        type: 3}
+    - target: {fileID: 114667727695249330, guid: 94396a7fe108794449f0e97fada2e741,
+        type: 2}
+      propertyPath: players.Array.data[4]
+      value: 
+      objectReference: {fileID: 21300000, guid: 0978def51b16825408b60d86b82c2170,
+        type: 3}
+    - target: {fileID: 114667727695249330, guid: 94396a7fe108794449f0e97fada2e741,
+        type: 2}
+      propertyPath: players.Array.data[5]
+      value: 
+      objectReference: {fileID: 21300000, guid: 09d65444ad401db48983d8087cd4b117,
+        type: 3}
+    - target: {fileID: 114637632944267554, guid: 94396a7fe108794449f0e97fada2e741,
+        type: 2}
+      propertyPath: percent_0
+      value: 
+      objectReference: {fileID: 21300000, guid: ee9bea2d4abaa634eb64ca90bdcad027,
+        type: 3}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 94396a7fe108794449f0e97fada2e741, type: 2}
   m_IsPrefabParent: 0

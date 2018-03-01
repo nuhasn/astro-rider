@@ -33,6 +33,8 @@ public class ItemGenerator : MonoBehaviour {
                 ob.transform.position = new Vector2(position.x, GameObject.FindWithTag("Player").transform.position.y);
             else
                 ob.transform.position = new Vector2(position.x, position.y + Random.Range(-maxY, maxY));
+            float f = Random.Range(0.7f, 1.5f);
+            ob.transform.localScale = new Vector2(f, f);
         }
         if (Time.time >= nextBatteryGenerationPoint)
         {
