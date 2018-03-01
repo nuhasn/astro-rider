@@ -44,9 +44,6 @@ public class PlayerController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (this.health <= 0)
-            gameOver();
-
         float x = 0;
         if (Input.GetKey("up") && rb.transform.position.y < camera.transform.position.y + maxY)
             transform.position = new Vector2(this.transform.position.x, this.transform.position.y + movementStrength / 100);
@@ -56,6 +53,10 @@ public class PlayerController : MonoBehaviour
             transform.position = new Vector2(this.transform.position.x - movementStrength / 100, this.transform.position.y);
         if (Input.GetKey("right") && rb.transform.position.x < camera.transform.position.x + maxX)
             transform.position = new Vector2(this.transform.position.x + movementStrength / 100, this.transform.position.y);
+
+        if (this.health <= 0)
+            gameOver();
+
 
         if (Time.time >= nextScoreUpdate)
         {
@@ -82,7 +83,6 @@ public class PlayerController : MonoBehaviour
         if (collision.tag == "Hazard")
         {
             this.health = this.health - this.asteroidHealthDeduction;
-            Destroy(collision.GetComponent<GameObject>());
             fxSound.clip = explosion;
             play = true;
         }
@@ -91,12 +91,13 @@ public class PlayerController : MonoBehaviour
             this.health = this.health + this.batteryHealth;
             if (this.health > 60)
                 this.health = 60;
-            Destroy(collision.GetComponent<GameObject>());
+            
             fxSound.clip = powerUp;
             play = true;
         }
         if (play)
             fxSound.Play();
+        Destroy(collision.GetComponent<GameObject>());
     }
 
     private void gameOver()
