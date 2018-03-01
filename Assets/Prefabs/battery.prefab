@@ -21,6 +21,7 @@ GameObject:
   - component: {fileID: 4289080381522830}
   - component: {fileID: 212547732751146542}
   - component: {fileID: 114435843593750908}
+  - component: {fileID: 114443897613428092}
   - component: {fileID: 70155653889108168}
   m_Layer: 0
   m_Name: battery
@@ -69,6 +70,17 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   rotationSpeed: 100
+--- !u!114 &114443897613428092
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1104664506392330}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a6fde50c94ec63740b54a0276f971ad8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!212 &212547732751146542
 SpriteRenderer:
   m_ObjectHideFlags: 1

@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class ItemGenerator : MonoBehaviour {
     // Item game object to generate.
-    public GameObject asteroid;
+    public GameObject[] asteroids;
     public GameObject battery;
 
     // Max item generation Y position.
@@ -25,7 +25,7 @@ public class ItemGenerator : MonoBehaviour {
         if (Time.time >= nextAsteroidGenerationPoint)
         {
             nextAsteroidGenerationPoint = (Time.time) + Random.Range(0.5f, 1);
-            GameObject ob = (GameObject) Instantiate (asteroid);
+            GameObject ob = (GameObject) Instantiate (asteroids[Random.Range(0,asteroids.Length)]);
             ob.SetActive(true);
             Vector2 position = this.transform.position;
             ob.transform.position = new Vector2(position.x, GameObject.FindWithTag("Player").transform.position.y);

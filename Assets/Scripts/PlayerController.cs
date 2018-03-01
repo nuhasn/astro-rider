@@ -75,12 +75,14 @@ public class PlayerController : MonoBehaviour
         if (collision.tag == "Hazard")
         {
             this.health = this.health - this.asteroidHealthDeduction;
+            Destroy(collision.GetComponent<GameObject>());
         }
         if (collision.tag == "Battery" && this.health < 60)
         {
             this.health = this.health + this.batteryHealth;
             if (this.health > 60)
                 this.health = 60;
+            Destroy(collision.GetComponent<GameObject>());
         }
     }
 
