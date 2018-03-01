@@ -44,11 +44,11 @@ public class PlayerController : MonoBehaviour
         float x = 0;
         if (Input.GetKey("up") && rb.transform.position.y < camera.transform.position.y + maxY)
             transform.position = new Vector2(this.transform.position.x, this.transform.position.y + movementStrength / 100);
-        else if (Input.GetKey("down") && rb.transform.position.y > camera.transform.position.y - maxY)
+        if (Input.GetKey("down") && rb.transform.position.y > camera.transform.position.y - maxY)
             transform.position = new Vector2(this.transform.position.x, this.transform.position.y - movementStrength / 100);
-        else if (Input.GetKey("left") && rb.transform.position.x > camera.transform.position.x - maxX)
+        if (Input.GetKey("left") && rb.transform.position.x > camera.transform.position.x - maxX)
             transform.position = new Vector2(this.transform.position.x - movementStrength / 100, this.transform.position.y);
-        else if (Input.GetKey("right") && rb.transform.position.x < camera.transform.position.x + maxX)
+        if (Input.GetKey("right") && rb.transform.position.x < camera.transform.position.x + maxX)
             transform.position = new Vector2(this.transform.position.x + movementStrength / 100, this.transform.position.y);
 
         if (Time.time >= nextScoreUpdate)
