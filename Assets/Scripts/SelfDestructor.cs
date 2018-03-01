@@ -18,7 +18,6 @@ public class SelfDestructor : MonoBehaviour
     {
         if (this.transform.position.x < destructPoint.transform.position.x)
         {
-            Debug.Log("here");
             Destroy(gameObject);
         }
     }

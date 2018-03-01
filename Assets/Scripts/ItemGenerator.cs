@@ -28,7 +28,11 @@ public class ItemGenerator : MonoBehaviour {
             GameObject ob = (GameObject) Instantiate (asteroids[Random.Range(0,asteroids.Length)]);
             ob.SetActive(true);
             Vector2 position = this.transform.position;
-            ob.transform.position = new Vector2(position.x, GameObject.FindWithTag("Player").transform.position.y);
+            GameObject p = GameObject.FindWithTag("Player");
+            if (p != null)
+                ob.transform.position = new Vector2(position.x, GameObject.FindWithTag("Player").transform.position.y);
+            else
+                ob.transform.position = new Vector2(position.x, position.y + Random.Range(-maxY, maxY));
         }
         if (Time.time >= nextBatteryGenerationPoint)
         {

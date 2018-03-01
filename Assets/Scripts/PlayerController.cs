@@ -16,7 +16,7 @@ public class PlayerController : MonoBehaviour
     public int batteryHealth;
 
     //Current score
-    private int score;
+    public int score;
     private Rigidbody2D rb;
     private Text scoreText;
     private Text gameOverText;
