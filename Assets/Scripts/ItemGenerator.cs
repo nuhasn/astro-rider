@@ -8,6 +8,10 @@ public class ItemGenerator : MonoBehaviour {
     public GameObject battery;
     public GameObject scrapMetal;
 
+    public PlayerController Player;
+
+    public float spacing;
+
     public GameObject levelController;
 
     private LevelController lc;
@@ -32,7 +36,7 @@ public class ItemGenerator : MonoBehaviour {
 	void Update () {
         if (Time.time >= nextAsteroidGenerationPoint)
         {
-            nextAsteroidGenerationPoint = (Time.time) + Random.Range(0.5f, 1);
+            nextAsteroidGenerationPoint = (Time.time) + Random.Range(0.5f,2);
             GameObject ob = (GameObject) Instantiate (asteroids[Random.Range(0,asteroids.Length)]);
             ob.SetActive(true);
             Vector2 position = this.transform.position;
