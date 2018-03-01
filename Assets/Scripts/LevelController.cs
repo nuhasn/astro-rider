@@ -19,8 +19,11 @@ public class LevelController : MonoBehaviour {
         player = GameObject.FindWithTag("Player").GetComponent<PlayerController>();
         player_sr = GameObject.FindWithTag("Player").GetComponent<SpriteRenderer>();
         planet_sr = GameObject.FindWithTag("Planet").GetComponent<SpriteRenderer>(); // we are accessing the SpriteRenderer that is attached to the Gameobject
-        if (planet_sr.sprite == null) // if the sprite on spriteRenderer is null then
+        if (planet_sr.sprite == null)
+        {// if the sprite on spriteRenderer is null then
             planet_sr.sprite = planets[0];
+            currentPlayer.AddComponent<PolygonCollider2D>();
+        }
 
         currentLevel = 0;
     }
