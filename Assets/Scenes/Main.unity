@@ -387,6 +387,91 @@ Prefab:
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: e1db9ab4d28f07b42b1d88634636ee2d, type: 2}
   m_IsPrefabParent: 0
+--- !u!1 &509471308 stripped
+GameObject:
+  m_PrefabParentObject: {fileID: 1041321260632308, guid: 38237c20796cf6c4ea852b7c0e11422b,
+    type: 2}
+  m_PrefabInternal: {fileID: 709523560}
+--- !u!82 &509471309
+AudioSource:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 509471308}
+  m_Enabled: 1
+  serializedVersion: 4
+  OutputAudioMixerGroup: {fileID: 0}
+  m_audioClip: {fileID: 8300000, guid: b86dea3c7d6856c478babac66e92732e, type: 3}
+  m_PlayOnAwake: 1
+  m_Volume: 1
+  m_Pitch: 1
+  Loop: 0
+  Mute: 0
+  Spatialize: 0
+  SpatializePostEffects: 0
+  Priority: 128
+  DopplerLevel: 1
+  MinDistance: 1
+  MaxDistance: 500
+  Pan2D: 0
+  rolloffMode: 0
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 2
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    - serializedVersion: 2
+      time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 2
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 0
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 2
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  reverbZoneMixCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 2
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 0
 --- !u!1001 &709523560
 Prefab:
   m_ObjectHideFlags: 0
@@ -491,7 +576,23 @@ Prefab:
       propertyPath: m_SpriteTilingProperty.newSize.y
       value: 0.52
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    - target: {fileID: 114107194552369776, guid: 38237c20796cf6c4ea852b7c0e11422b,
+        type: 2}
+      propertyPath: backMusic
+      value: 
+      objectReference: {fileID: 8300000, guid: b86dea3c7d6856c478babac66e92732e, type: 3}
+    - target: {fileID: 114107194552369776, guid: 38237c20796cf6c4ea852b7c0e11422b,
+        type: 2}
+      propertyPath: explosion
+      value: 
+      objectReference: {fileID: 8300000, guid: b86dea3c7d6856c478babac66e92732e, type: 3}
+    - target: {fileID: 114107194552369776, guid: 38237c20796cf6c4ea852b7c0e11422b,
+        type: 2}
+      propertyPath: powerUp
+      value: 
+      objectReference: {fileID: 8300000, guid: 24485f270005ee54c938bbbf58a590cb, type: 3}
+    m_RemovedComponents:
+    - {fileID: 60626950734866012, guid: 38237c20796cf6c4ea852b7c0e11422b, type: 2}
   m_ParentPrefab: {fileID: 100100000, guid: 38237c20796cf6c4ea852b7c0e11422b, type: 2}
   m_IsPrefabParent: 0
 --- !u!1 &880373978

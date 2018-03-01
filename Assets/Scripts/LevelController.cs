@@ -32,13 +32,14 @@ public class LevelController : MonoBehaviour {
 	void Update () {
 		if (this.currentLevel < levelScoreThresholds.Length && player.score >= levelScoreThresholds[currentLevel])
         {
-                planet_sr.sprite = planets[currentLevel + 1];
+            planet_sr.sprite = planets[currentLevel + 1];
             player_sr.sprite = players[currentLevel + 1];
-          //  Vector2 p = currentPlayer.transform.position;
-                //Destroy(currentPlayer.gameObject);
-          //      this.currentPlayer = (GameObject) Instantiate(players[currentLevel + 1]);
-          //      currentPlayer.SetActive(true);
-          //      currentPlayer.transform.position = p;
+            //  Vector2 p = currentPlayer.transform.position;
+            //Destroy(currentPlayer.gameObject);
+            //      this.currentPlayer = (GameObject) Instantiate(players[currentLevel + 1]);
+            //      currentPlayer.SetActive(true);
+            //      currentPlayer.transform.position = p;
+            currentPlayer.AddComponent<PolygonCollider2D>();
             currentLevel++;
         }
 	}

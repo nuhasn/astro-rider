@@ -5,6 +5,10 @@ using UnityEngine.UI;
 
 public class PlayerController : MonoBehaviour
 {
+    private AudioSource fxSound;
+    public AudioClip explosion;
+    public AudioClip powerUp;
+
     public float movementStrength;
     public GameObject camera;
     public int maxX;
@@ -25,6 +29,8 @@ public class PlayerController : MonoBehaviour
     // Use this for initialization
     void Start()
     {
+        fxSound = GetComponent<AudioSource>();
+
         this.score = 0;
         this.nextScoreUpdate = 1;
         this.rb = gameObject.GetComponent<Rigidbody2D>();
@@ -72,10 +78,13 @@ public class PlayerController : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
+        bool play = false;
         if (collision.tag == "Hazard")
         {
             this.health = this.health - this.asteroidHealthDeduction;
             Destroy(collision.GetComponent<GameObject>());
+            fxSound.clip = explosion;
+            play = true;
         }
         if (collision.tag == "Battery" && this.health < 60)
         {
@@ -83,7 +92,11 @@ public class PlayerController : MonoBehaviour
             if (this.health > 60)
                 this.health = 60;
             Destroy(collision.GetComponent<GameObject>());
+            fxSound.clip = powerUp;
+            play = true;
         }
+        if (play)
+            fxSound.Play();
     }
 
     private void gameOver()
