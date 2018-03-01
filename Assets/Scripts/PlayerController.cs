@@ -106,7 +106,7 @@ public class PlayerController : MonoBehaviour
         //    transform.position = new Vector2(this.transform.position.x, this.transform.position.y - movementStrength / 100);
         if (Input.GetKey("right") && rb.transform.position.x < camera.transform.position.x + maxX)
         {
-            if (!upPressed)
+            if (!rightPressed)
             {
                 rightPressed = true;
                 rightPressStartTime = Time.time;
