@@ -761,8 +761,21 @@ Prefab:
       propertyPath: m_SpriteTilingProperty.newSize.y
       value: 0.52
       objectReference: {fileID: 0}
+    - target: {fileID: 114107194552369776, guid: 38237c20796cf6c4ea852b7c0e11422b,
+        type: 2}
+      propertyPath: movementStrength
+      value: 10
+      objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 60626950734866012, guid: 38237c20796cf6c4ea852b7c0e11422b, type: 2}
+    - {fileID: 60358571717729110, guid: 38237c20796cf6c4ea852b7c0e11422b, type: 2}
+    - {fileID: 60641352862653574, guid: 38237c20796cf6c4ea852b7c0e11422b, type: 2}
+    - {fileID: 60898518357625912, guid: 38237c20796cf6c4ea852b7c0e11422b, type: 2}
+    - {fileID: 60096820427302354, guid: 38237c20796cf6c4ea852b7c0e11422b, type: 2}
+    - {fileID: 60482791372855350, guid: 38237c20796cf6c4ea852b7c0e11422b, type: 2}
+    - {fileID: 60208212857049480, guid: 38237c20796cf6c4ea852b7c0e11422b, type: 2}
+    - {fileID: 60081139847240360, guid: 38237c20796cf6c4ea852b7c0e11422b, type: 2}
+    - {fileID: 60098007487152394, guid: 38237c20796cf6c4ea852b7c0e11422b, type: 2}
   m_ParentPrefab: {fileID: 100100000, guid: 38237c20796cf6c4ea852b7c0e11422b, type: 2}
   m_IsPrefabParent: 0
 --- !u!1 &880373978

@@ -39,7 +39,6 @@ public class LevelController : MonoBehaviour {
             //      this.currentPlayer = (GameObject) Instantiate(players[currentLevel + 1]);
             //      currentPlayer.SetActive(true);
             //      currentPlayer.transform.position = p;
-            currentPlayer.AddComponent<PolygonCollider2D>();
             currentLevel++;
         }
 	}
