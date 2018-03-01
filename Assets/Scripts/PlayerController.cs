@@ -16,7 +16,6 @@ public class PlayerController : MonoBehaviour
     public GameObject scoreTextGO;
     public GameObject gameOverTextGO;
     public GameObject factTextGO;
-    public GameObject scrapTextGO;
     public int health;
     public int asteroidHealthDeduction;
     public int batteryHealth;
@@ -29,7 +28,6 @@ public class PlayerController : MonoBehaviour
 
     //Current scrap
     public int scrap;
-    private Text scrapText;
 
     private bool upPressed;
     private float upPressStartTime;
@@ -52,10 +50,8 @@ public class PlayerController : MonoBehaviour
         this.nextScoreUpdate = 1;
         this.rb = gameObject.GetComponent<Rigidbody2D>();
         this.scoreText = scoreTextGO.GetComponent<Text>();
-        this.scrapText = scrapTextGO.GetComponent<Text>();
 
         SetScoreText();
-        SetScrapText();
 
         this.upPressed = false;
         this.upPressStartTime = 0;
@@ -161,10 +157,6 @@ public class PlayerController : MonoBehaviour
         scoreText.text = "Score: " + this.score.ToString();
     }
 
-    private void SetScrapText()
-    {
-        scrapText.text = "Scrap: " + this.scrap.ToString();
-    }
 
     private void handleScore()
     {
@@ -175,7 +167,6 @@ public class PlayerController : MonoBehaviour
     private void handleScrap()
     {
         this.scrap++;
-        SetScrapText();
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
