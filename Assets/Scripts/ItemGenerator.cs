@@ -4,28 +4,39 @@ using UnityEngine;
 
 public class ItemGenerator : MonoBehaviour {
     // Item game object to generate.
-    public GameObject item;
+    public GameObject asteroid;
+    public GameObject battery;
 
     // Max item generation Y position.
     public int maxY;
 
     // Monitor next point that the item needs to generated at.
-    private float nextGenerationPoint;
+    private float nextAsteroidGenerationPoint;
+    private float nextBatteryGenerationPoint;
 
-	// Use this for initialization
-	void Start () {
-        this.nextGenerationPoint = 1;
-	}
+    // Use this for initialization
+    void Start () {
+        this.nextAsteroidGenerationPoint = 1;
+        this.nextBatteryGenerationPoint = 10;
+    }
 	
 	// Update is called once per frame
 	void Update () {
-        if (Time.time >= nextGenerationPoint)
+        if (Time.time >= nextAsteroidGenerationPoint)
         {
-            nextGenerationPoint = (Time.time) + Random.Range(0.5f, 1);
-            GameObject ob = (GameObject) Instantiate (item);
+            nextAsteroidGenerationPoint = (Time.time) + Random.Range(0.5f, 1);
+            GameObject ob = (GameObject) Instantiate (asteroid);
             ob.SetActive(true);
             Vector2 position = this.transform.position;
             ob.transform.position = new Vector2(position.x, GameObject.FindWithTag("Player").transform.position.y);
+        }
+        if (Time.time >= nextBatteryGenerationPoint)
+        {
+            nextBatteryGenerationPoint = (Time.time) + Random.Range(3, 7);
+            GameObject ob = (GameObject)Instantiate(battery);
+            ob.SetActive(true);
+            Vector2 position = this.transform.position;
+            ob.transform.position = new Vector2(position.x, position.y + Random.Range(-maxY,maxY));
         }
     }
 }

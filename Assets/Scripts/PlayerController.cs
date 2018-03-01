@@ -10,16 +10,15 @@ public class PlayerController : MonoBehaviour
     public int maxX;
     public int maxY;
     public GameObject scoreTextGO;
-    public GameObject healthTextGO;
     public GameObject gameOverTextGO;
     public int health;
     public int asteroidHealthDeduction;
+    public int batteryHealth;
 
     //Current score
     private int score;
     private Rigidbody2D rb;
     private Text scoreText;
-    private Text healthText;
     private Text gameOverText;
     private int nextScoreUpdate;
 
@@ -30,18 +29,15 @@ public class PlayerController : MonoBehaviour
         this.nextScoreUpdate = 1;
         this.rb = gameObject.GetComponent<Rigidbody2D>();
         this.scoreText = scoreTextGO.GetComponent<Text>();
-        this.healthText = healthTextGO.GetComponent<Text>();
         gameOverText = gameOverTextGO.GetComponent<Text>();
         gameOverText.text = "";
         gameOverText.enabled = false;
         SetScoreText();
-        SetHealthText();
     }
 
     // Update is called once per frame
     void Update()
     {
-        SetHealthText();
         if (this.health <= 0)
             gameOver();
 
@@ -67,12 +63,7 @@ public class PlayerController : MonoBehaviour
     {
         scoreText.text = "Score: " + this.score.ToString();
     }
-
-    private void SetHealthText()
-    {
-        healthText.text = "Health: " + this.health.ToString();
-    }
-
+    
     private void handleScore()
     {
         this.score++;
@@ -84,6 +75,12 @@ public class PlayerController : MonoBehaviour
         if (collision.tag == "Hazard")
         {
             this.health = this.health - this.asteroidHealthDeduction;
+        }
+        if (collision.tag == "Battery" && this.health < 60)
+        {
+            this.health = this.health + this.batteryHealth;
+            if (this.health > 60)
+                this.health = 60;
         }
     }
 
